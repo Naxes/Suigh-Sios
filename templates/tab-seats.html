@@ -1,7 +1,29 @@
 <ion-view>
   <ion-content>
     <h1 class="text-center padding-top">THE IDEA</h1>
-    <!-- remind me these inline margins for the cards are temporary -->
+    <ion-slide-box>
+      <ion-slide>
+        <div class="box1">
+          <!-- this inline margin for the card is temporary -->
+          <div class="card" style="margin: 10px 10px;">
+            <div class="item item-text-wrap justify-text">
+              <p>The driver has direct control over the capacity counter of a respective bus, whilst passengers view the same information only with these controls omitted.</p>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box2">
+          <!-- this inline margin for the card is temporary -->
+          <div class="card" style="margin: 10px 10px;">
+            <div class="item item-text-wrap justify-text">
+              <p>This is currently a variable that's called using AngularJS directives from an external javascript file, but is planned to be retrieved from a database.</p>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+    <!-- this inline margin for the card is temporary -->
     <div class="card" style="margin: 0px 10px;">
       <div class="item item-divider custom-tab-header text-center">
         <span class="font-white font-groB">Passenger</span>
@@ -11,28 +33,8 @@
         {{count}}/{{capacity}}
       </div>
     </div>
-    <ion-slide-box>
-      <ion-slide>
-        <div class="box1">
-          <div class="card">
-            <div class="item item-text-wrap">
-              <p>The driver has direct control over the capacity of a given bus, whilst passengers view the same information only with these controls omitted.</p>
-            </div>
-          </div>
-        </div>
-      </ion-slide>
-      <ion-slide>
-        <div class="box2">
-          <div class="card">
-            <div class="item item-text-wrap">
-              <p>This is currently a variable that's called using AngularJS directives from an external javascript file, but is planned to be retrieved from a database.</p>
-            </div>
-          </div>
-        </div>
-      </ion-slide>
-    </ion-slide-box>
-
-    <div class="card" style="margin: 0px 10px;">
+    <!-- this inline margin for the card is temporary -->
+    <div class="card" style="margin: 10px 10px;">
       <div class="item item-divider custom-tab-header text-center">
         <span class="font-white font-groB">Driver</span>
       </div>

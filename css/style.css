@@ -6,6 +6,10 @@
  |_|  \___/|_| |_|\__| |____/ \__|\__, |_|\___||___/
                                   |___/             
 */
+.justify-text{
+  text-align: justify;
+}
+
 .font-klein{
   font-size: 15px;
 }
@@ -52,5 +56,11 @@
 }
 
 .box1, .box2, .box3 {
-  height: auto;
+  height: 100%;
+}
+
+/* fixes strange bug | slide-box's dots would flicker when scrolling */
+.slider-pager {
+-webkit-transform: translateZ(0) !important;
+transform: translateZ(0) !important;
 }

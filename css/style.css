@@ -50,3 +50,7 @@
 .custom-tab-header{
 	background-color: #FF7675 !important;
 }
+
+.box1, .box2, .box3 {
+  height: auto;
+}

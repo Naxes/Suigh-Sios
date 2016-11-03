@@ -1,6 +1,8 @@
 <ion-view>
   <ion-content>
-    <div class="card">
+    <h1 class="text-center padding-top">THE IDEA</h1>
+    <!-- remind me these inline margins for the cards are temporary -->
+    <div class="card" style="margin: 0px 10px;">
       <div class="item item-divider custom-tab-header text-center">
         <span class="font-white font-groB">Passenger</span>
       </div>
@@ -9,14 +11,28 @@
         {{count}}/{{capacity}}
       </div>
     </div>
+    <ion-slide-box>
+      <ion-slide>
+        <div class="box1">
+          <div class="card">
+            <div class="item item-text-wrap">
+              <p>The driver has direct control over the capacity of a given bus, whilst passengers view the same information only with these controls omitted.</p>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box2">
+          <div class="card">
+            <div class="item item-text-wrap">
+              <p>This is currently a variable that's called using AngularJS directives from an external javascript file, but is planned to be retrieved from a database.</p>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
 
-    <div class="card">
-      <div class="item item-text-wrap">
-        <p>The driver has direct control over the capacity of a given bus, whilst passengers view the same information only with these controls omitted.</p>
-      </div>
-    </div>
-
-    <div class="card">
+    <div class="card" style="margin: 0px 10px;">
       <div class="item item-divider custom-tab-header text-center">
         <span class="font-white font-groB">Driver</span>
       </div>
@@ -35,12 +51,6 @@
             </button>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="item item-text-wrap">
-        <p>This is currently a variable that's called using AngularJS directives from an external javascript file, but is planned to be retrieved from a database.</p>
       </div>
     </div>
   </ion-content>

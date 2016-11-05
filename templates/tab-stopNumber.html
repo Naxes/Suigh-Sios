@@ -1,0 +1,80 @@
+<ion-view>
+  <ion-content>
+    <h2 id="stopNumber-heading1" style="color:#000000;text-align:center;">Find your bus</h2>
+    <form id="stopNumber-form10" class="list">
+      
+	<!--The explanation box-->
+	<ion-slide-box>
+      <ion-slide>
+        <div class="box1">
+          <!-- this inline margin for the card is temporary -->
+          <div class="card" style="margin: 10px 10px;">
+            <div class="item item-text-wrap justify-text">
+              <p>Select the specific bus following by inserting its associated stop number in this page, in order to proceed to the seats page of it.</p>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box2">
+          <!-- this inline margin for the card is temporary -->
+          <div class="card" style="margin: 10px 10px;">
+            <div class="item item-text-wrap justify-text">
+              <p>Busses & stop numbers will be stored in a database.</p>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+	
+	
+	<div class="card" style="margin: 0px 10px;">
+      <!--Bus name-->
+	  <div class="item item-divider custom-tab-header text-center">
+        <span class="font-white font-groB">Bus name</span>
+      </div>
+	  
+	  <!--The select list-->
+	  <center>
+	  <label class="item" style="margin:0 auto; width:300px">
+        <!--<span class="input-label" style="background-color:red;">Select</span>-->
+        <select>	
+          <option>Bus Eireann</option>
+          <option>Matthew bus</option>
+          <option>ExpressWay bus</option>
+          <option>Airlink 747</option>
+        </select>
+      </label>
+	  </center>
+	  
+    </div> 
+    </form>
+	
+	<!--Stop number-->
+	<div class="card" style="margin: 10px 10px;">
+		<!--Stop number title-->
+		<div class="item item-divider custom-tab-header text-center">
+			<span class="font-white font-groB">Stop number</span>
+		</div>
+		
+		<!--Search box-->
+		<center>
+			<form id="stopNumber-form12" class="list" style="margin:10px; width:220px">
+			  <label class="item item-input">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input type="search" placeholder="Enter your stop number">
+			  </label>
+			</form>
+		</center>
+		
+		<!--Search button-->
+		<center>
+			<a href="#" onclick="window.open('tab-seats.html', '_system', 'location=yes'); return false;" id="stopNumber-button1" style="border-radius:8px 35px 8px 35px; width:110px" class="button button-assertive"> Search</a>
+		</center>
+		<br/>
+		
+    </div>
+  </ion-content>
+</ion-view>
+
+

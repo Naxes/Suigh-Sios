@@ -1,35 +1,25 @@
 <ion-view>
   <ion-content>
-    <h2 id="stopNumber-heading1" style="color:#000000;text-align:center;">Find your bus</h2>
-    <form id="stopNumber-form10" class="list">
-      
+    <!--The 1st title-->
+	<h2 class="text-center padding-top">Find your bus</h2>
+
 	<!--The explanation box-->
 	<ion-slide-box>
-      <ion-slide>
         <div class="box1">
           <!-- this inline margin for the card is temporary -->
           <div class="card" style="margin: 10px 10px;">
             <div class="item item-text-wrap justify-text">
-              <p>Select the specific bus following by inserting its associated stop number in this page, in order to proceed to the seats page of it.</p>
-            </div>
+				<p>Select the specific bus following by inserting its associated stop number in this page, in order to proceed to the seats page of it.</p>
+				<br/>
+			</div>
           </div>
         </div>
-      </ion-slide>
-      <ion-slide>
-        <div class="box2">
-          <!-- this inline margin for the card is temporary -->
-          <div class="card" style="margin: 10px 10px;">
-            <div class="item item-text-wrap justify-text">
-              <p>Busses & stop numbers will be stored in a database.</p>
-            </div>
-          </div>
-        </div>
-      </ion-slide>
-    </ion-slide-box>
+    </ion-slide-box>		
+
 	
-	
+	<!--Bus name-->
 	<div class="card" style="margin: 0px 10px;">
-      <!--Bus name-->
+      <!--Bus name title-->
 	  <div class="item item-divider custom-tab-header text-center">
         <span class="font-white font-groB">Bus name</span>
       </div>
@@ -48,7 +38,14 @@
 	  </center>
 	  
     </div> 
-    </form>
+	
+	<script>
+		function openWin() {
+			window.open("http://www.w3schools.com");
+		}
+	</script>
+	
+	
 	
 	<!--Stop number-->
 	<div class="card" style="margin: 10px 10px;">
@@ -69,7 +66,7 @@
 		
 		<!--Search button-->
 		<center>
-			<a href="#" onclick="window.open('tab-seats.html', '_system', 'location=yes'); return false;" id="stopNumber-button1" style="border-radius:8px 35px 8px 35px; width:110px" class="button button-assertive"> Search</a>
+			<a href="tab-seats" onclick="window.open('tab-seats.html'); return false;" id="stopNumber-button1" style="border-radius:8px 35px 8px 35px; width:110px" class="button button-assertive"> Search</a>
 		</center>
 		<br/>
 		

@@ -1,0 +1,97 @@
+<ion-view>
+  <ion-content>
+    <h2 class="text-center padding-top">SEAT AVAILABILITY</h2>
+    <!-- Text boxes you can navigate by swiping -->
+    <ion-slide-box>
+      <ion-slide>
+        <!-- Information slide 1 -->
+        <div class="box1">
+          <!-- this inline margin for the card is temporary -->
+          <div class="card" style="margin: 10px 10px;">
+            <div class="item item-text-wrap justify-text">
+              <p>The driver has direct control over the capacity counter of a respective bus, whilst passengers view the same information only with these controls omitted.</p>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <!-- Information slide 2 -->
+        <div class="box2">
+          <!-- this inline margin for the card is temporary -->
+          <div class="card" style="margin: 10px 10px;">
+            <div class="item item-text-wrap justify-text">
+              <p>This is currently a variable that's called using AngularJS directives from an external javascript file, but is planned to be retrieved from a database.</p>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+	
+    <!-- this inline margin for the card is temporary -->
+    <div class="card" style="margin: 0px 10px;">
+      <div class="item item-divider custom-tab-header text-center">
+        <span class="font-white font-groB">Passenger</span>
+      </div>
+      <!-- Passenger counter without controls -->
+      <div class="item item-text-wrap text-center font-mittel">
+        {{count}}/{{capacity}}
+      </div>
+    </div>
+    <!-- Driver counter with controls -->
+    <!-- this inline margin for the card is temporary -->
+    <div class="card" style="margin: 10px 10px;">
+      <div class="item item-divider custom-tab-header text-center">
+        <span class="font-white font-groB">Driver</span>
+      </div>
+
+      <div class="item item-text-wrap text-center font-mittel">
+        {{count}}/{{capacity}}
+        <div class="row">
+          <div class="col">
+            <!-- Button to decrease seat count -->
+            <button class="button button-block button-large button-assertive" ng-click="minus()">
+              <i class="ion-minus"></i>
+            </button>
+          </div>
+          <div class="col">
+            <!-- Button to increase seat count -->
+            <button class="button button-block button-large button-balanced" ng-click="plus()">
+              <i class="ion-plus"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Button to reset seat count -->
+        <button class="button button-block ion-icon ion-loop button-large button-energized" ng-click="reset()"></button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

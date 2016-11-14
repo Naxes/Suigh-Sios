@@ -1,0 +1,67 @@
+<ion-view>
+  <ion-content>
+    <!--The 1st title-->
+	<h2 class="text-center padding-top">FIND YOUR BUS</h2>
+
+	<!--The explanation box-->
+	<ion-slide-box>
+        <div class="box1">
+          <!-- this inline margin for the card is temporary -->
+          <div class="card" style="margin: 10px 10px;">
+            <div class="item item-text-wrap justify-text">
+				<p>Specifying a bus company and stop number specific to said company will allow you to navigate to the seat availability for that particular bus.</p>
+				<br/>
+			</div>
+          </div>
+        </div>
+    </ion-slide-box>		
+
+	
+	<!-- Bus name -->
+	<div class="card" style="margin: 0px 10px;">
+      <!-- Bus name title -->
+	  <div class="item item-divider custom-tab-header text-center">
+        <span class="font-white font-groB">Bus Name</span>
+      </div>
+	  
+	  <!-- The select list -->
+	  <center>
+	  <label class="item" style="margin:0 auto; width:300px">
+        <!-- <span class="input-label" style="background-color:red;">Select</span> -->
+        <select>	
+          <option>Bus Eireann</option>
+          <option>Matthew bus</option>
+          <option>ExpressWay bus</option>
+          <option>Airlink 747</option>
+        </select>
+      </label>
+	  </center>
+	  
+    </div> 
+
+	<!-- Stop number -->
+	<div class="card" style="margin: 10px 10px;">
+		<!-- Stop number title -->
+		<div class="item item-divider custom-tab-header text-center">
+			<span class="font-white font-groB">Stop Number</span>
+		</div>
+		
+		<!-- Search box -->
+		<center>
+			<form id="stopNumber-form12" class="list" style="margin:10px; width:220px">
+			  <label class="item item-input">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input type="search" placeholder="Enter stop number">
+			  </label>
+			</form>
+		</center>
+		
+		<!-- Search button -->
+			<a ui-sref="tab.seats" id="stopNumber-button1" style="border-radius:8px 35px 8px 35px; width:110px" class="button button-assertive center"> Search</a>
+		<br/>
+		
+    </div>
+  </ion-content>
+</ion-view>
+
+

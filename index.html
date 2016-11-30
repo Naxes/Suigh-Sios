@@ -7,38 +7,23 @@
 
     <link rel="manifest" href="manifest.json">
 
-    <!-- un-comment this code to enable service worker
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(() => console.log('service worker installed'))
-          .catch(err => console.log('Error', err));
-      }
-    </script>-->
+  	<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <!-- Side menu -->
+		<link href="css/ionic.app.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <!--Side menu-->
-	<link href="css/ionic.app.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
-    <!-- ionic/angularjs js -->
+    <!-- Ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
+    <!-- Cordova script -->
     <script src="cordova.js"></script>
 
-    <!-- your app's js -->
+    <!-- Our app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
-	<script src="js/routes.js"></script>
+		<script src="js/routes.js"></script>
     <script src="js/directives.js"></script>
-  
   </head>
   <body ng-app="starter" animation="slide-left-right-ios7">
   
@@ -71,7 +56,7 @@
 		  <div class="spacer" style="width: 268px; height: 19px;"></div>
 		  <ion-list id="menu-list1">
 			<ion-item class="item-icon-right  side-menu-item" id="menu-list-item1" ui-sref="tab.stopNumber" menu-close="">
-			  <i class="icon ion-android-pin"></i>Stop number</ion-item>
+				<i class="icon ion-android-pin"></i>Stop number</ion-item>
 			<ion-item class="item-icon-right  side-menu-item" id="menu-list-item2" ui-sref="tab.seats" menu-close="">
 			  <i class="icon ion-android-bus"></i>Seats</ion-item>
 			<ion-item class="item-icon-right  side-menu-item" id="menu-list-item3" ui-sref="tab.route" menu-close="">
@@ -82,5 +67,21 @@
 		</ion-content>
 	  </ion-side-menu>
 	</ion-side-menus>
+	
+	<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBQ5aBJNPXY1VHI7p5a9T15Ksy4T54LDko",
+	    authDomain: "testapp-c77c8.firebaseapp.com",
+	    databaseURL: "https://testapp-c77c8.firebaseio.com",
+	    storageBucket: "testapp-c77c8.appspot.com",
+	    messagingSenderId: "945447404926"
+	  };
+	  firebase.initializeApp(config);
+	  
+		// Get a reference to the database service
+	  var database = firebase.database();
+	</script>
   </body>
 </html>

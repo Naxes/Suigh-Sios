@@ -7,27 +7,58 @@ angular.module('starter.controllers', [])
 
 // Controller for tab-seats
 .controller('SeatsCtrl', function($scope, $state) {
-  // Populating test data for counter
-  $scope.count = 0;
-  $scope.capacity = 40;
-  $scope.plus = function(){
+  $scope.count;
+  $scope.capacity;
+  
+  // Reference first entry in Firebase Database & display data
+  var seatRef = firebase.database().ref('buses/0/seats/');
+  seatRef.on("value", function(snapshot) {
+    console.log(snapshot.val());
+    $scope.count = snapshot.val();
+    $scope.$evalAsync();
+  });
+  
+  var capacityRef = firebase.database().ref('buses/0/capacity/');
+  capacityRef.on("value", function(snapshot) {
+    console.log(snapshot.val());
+    $scope.capacity = snapshot.val();
+    $scope.$evalAsync();
+  });
+  
+  // Increment seat count & update database
+  $scope.plus = function(capacity, seats){
     if($scope.count>=0 && $scope.count<$scope.capacity){
       $scope.count++;
-    } else{
+    }else{
       console.log();
     }
+    
+    firebase.database().ref('buses/0/').set({
+        capacity: $scope.capacity,
+        seats: $scope.count
+    });
   }
-
-  $scope.minus = function(){
+  
+  // Subtract seat count & update database
+  $scope.minus = function(capacity, seats){
     if($scope.count>0){
-      $scope.count--;
-    } else{
+      $scope.count--; 
+    }else{
       console.log();
     }
+    
+    firebase.database().ref('buses/0/').set({
+        capacity: $scope.capacity,
+        seats: $scope.count
+    }); 
   }
 
-  $scope.reset = function(){
+  $scope.reset = function(capacity, seats){
     $scope.count = 0;
+    firebase.database().ref('buses/0/').set({
+        capacity: $scope.capacity,
+        seats: $scope.count
+    });  
   }
 })
 

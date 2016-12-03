@@ -1,42 +1,26 @@
 <ion-view onload="dataInit()">
   <ion-content>
-    <h2 class="text-center padding-top">SEAT AVAILABILITY</h2>
-	
-    <!-- this inline margin for the card is temporary -->
-    <div class="card" style="margin: 0px 10px;">
-      <div class="item item-divider custom-tab-header text-center">
-        <span class="font-white font-groB">Passenger</span>
-      </div>
-      <!-- Passenger counter without controls -->
-      <div class="item item-text-wrap text-center font-mittel">
-        {{count}}/{{capacity}}
-      </div>
-    </div>
     <!-- Driver counter with controls -->
     <!-- this inline margin for the card is temporary -->
     <div class="card" style="margin: 10px 10px;">
-      <div class="item item-divider custom-tab-header text-center">
-        <span class="font-white font-groB">Driver</span>
-      </div>
-
-      <div class="item item-text-wrap text-center font-mittel">
+      <div class="font-white item item-text-wrap text-center font-groB custom-tab-header">
         {{count}}/{{capacity}}
         <div class="row">
           <div class="col">
             <!-- Button to decrease seat count -->
-            <button class="button button-block button-large button-assertive" ng-click="minus()">
+            <button class="button button-block button-large button-dark" ng-click="minus()">
               <i class="ion-minus"></i>
             </button>
           </div>
           <div class="col">
             <!-- Button to increase seat count -->
-            <button class="button button-block button-large button-balanced" ng-click="plus()">
+            <button class="button button-block button-large button-dark" ng-click="plus()">
               <i class="ion-plus"></i>
             </button>
           </div>
         </div>
         <!-- Button to reset seat count -->
-        <button class="button button-block ion-icon ion-loop button-large button-energized" ng-click="reset()"></button>
+        <button class="button button-block ion-icon ion-loop button-large button-dark" ng-click="reset()"></button>
       </div>
     </div>
   </ion-content>

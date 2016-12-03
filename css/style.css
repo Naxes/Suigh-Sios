@@ -34,13 +34,9 @@
  |_| \_|\__,_| \_/ |_|\__, |\__,_|\__|_|\___/|_| |_| |____/ \__|\__, |_|\___||___/
                       |___/                                     |___/                                                                                 
 */
-.custom-assertive-header{
-	border-color: #EF473A !important;
-	background-color: #EF473A !important;
-}
-
-.header-shadow{
-  box-shadow: 0 2px 2px grey;
+.custom-tab-header{
+	border-color: #0D0F1B !important;
+	background-color: #0D0F1B !important;
 }
 
 /*
@@ -59,15 +55,6 @@
     display: block;
 }
 
-.custom-tab-header{
-	background-color: #FF7675 !important;
-}
-
-/* Height of the slide-boxes */
-.box1, .box2, .box3 {
-  height: 100%;
-}
-
 /*
    ___                               _ _   _               ___            _        ____  _         _           
   / _ \__   _____ _ ____      ___ __(_) |_| |_ ___ _ __   |_ _|___  _ __ (_) ___  / ___|| |_ _   _| | ___  ___ 
@@ -76,6 +63,19 @@
   \___/  \_/ \___|_|    \_/\_/ |_|  |_|\__|\__\___|_| |_| |___\___/|_| |_|_|\___| |____/ \__|\__, |_|\___||___/
                                                                                              |___/             
 */
+
+ion-content{
+  background-color: #2A2B36 !important;
+}
+
+.side-menu-gradient{
+  background: linear-gradient(to bottom left, #0D0F1B, #2A2B36) !important;
+}
+
+.card, .list-inset{
+  border-radius: 0px !important;
+  background-color: rgba(0,0,0,0) !important;
+}
 
 /* Bus image in the side menu */
 .profile-image img{
@@ -86,6 +86,12 @@
 .slider-pager {
 -webkit-transform: translateZ(0) !important;
 transform: translateZ(0) !important;
+}
+
+.tabs{
+  color: #FFFFFF !important;
+  background-color: #0D0F1B !important;
+  background-size: 100% 0px !important;
 }
 
 /*-------------------------------------------------------------------------------------------------*/

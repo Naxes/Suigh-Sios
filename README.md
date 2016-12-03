@@ -59,8 +59,10 @@ help.
 I'm lumping these two tabs together because I no longer know what I want them to be. 'Contact Us' is a very cop-out feature and the 'Route Map' I think is 
 unreasonable to accomplish in a weeks time at this stage when we've only JUST gotten a database linked.
 
-**Sign Up & Login?**
+**Sign Up & Login?**  
 I personally don't think this feature is necessary whatsoever. I'm not sure if I have made it clear to each team member but essentially the idea is that 
 Suigh Síos is TWO seperate applications. One for the driver, who has the ability to manipulate the data, and one for the passenger, with that functionality
 stripped out. It's a lot simpler than devising a login system whereby - IF bus driver, show controls, IF passenger, omit controls. Again this is another thing
-I think is unreasonable to do in a weeks time anyway. 
+I think is unreasonable to do in a weeks time anyway.
+
+### -Seán

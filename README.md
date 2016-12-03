@@ -11,10 +11,10 @@ If you are prompted to select between an IP or localhost ALWAYS choose the IP op
 The ones related to the app are located exclusively inside the 'www' folder. Everything outside of this folder belongs to the framework being utilized.
 
 **What do specific files in the 'www' folder do?**  
-#### Templates Folder  
+*Templates Folder*  
 Inside this folder are all of the apps 'views', or the different pages you can naviagte to.
 
-#### CSS Folder  
+*CSS Folder*  
 Inside this folder are the apps stylesheets. 'style.css' is our own personal stylesheet for creating new styles, as well as overriding Ionic's built in 
 styles we do not wish to utilize. It is the only stylesheet that should be edited.
 

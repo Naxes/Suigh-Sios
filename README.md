@@ -22,7 +22,7 @@ styles we do not wish to utilize. It is the only stylesheet that should be edite
 Inside this folder is the apps Javascript. Two files matter here, 'controllers.js' and 'routes.js'. The former is the apps functionality through each views 
 controller including references to the database. The latter is the links between the views with regards to the tabs along the bottom of the app.
 
-*index.html*
+*index.html*  
 This is the html file whereby everything is linked: stylesheets, javascript, database etc. Anything you put in this file is universally used throughout the app
 from my knowledge, such as the navbar on the top of the app. However, it is NOT a page that is navigated to in the app in the way a regular website uses it as 
 its homepage. Content should not be added to it specifically. 

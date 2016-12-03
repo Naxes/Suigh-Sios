@@ -1,8 +1,7 @@
 # Suigh Síos
 ## FAQ
 **What is '$scope' in the code?**
-
-Any time you see '$scope.something' imagine it as 'var something'. That is the simplest way to imagine it and avoid confusion when reading the code. 
+Any time you see '$scope.something' imagine it as 'var something'. That is the simplest way to imagine it and avoid confusion when reading the code.   
 It is AngularJS, and is what allows us to call the variables in the HTML really easily like so: '{{something}}'
 
 **How do I run the app here on cloud9?**

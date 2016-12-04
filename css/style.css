@@ -26,17 +26,21 @@
   color: #FFFFFF !important;
 }
 
-/*
-  _   _             _             _   _               ____  _         _           
- | \ | | __ ___   _(_) __ _  __ _| |_(_) ___  _ __   / ___|| |_ _   _| | ___  ___ 
- |  \| |/ _` \ \ / / |/ _` |/ _` | __| |/ _ \| '_ \  \___ \| __| | | | |/ _ \/ __|
- | |\  | (_| |\ V /| | (_| | (_| | |_| | (_) | | | |  ___) | |_| |_| | |  __/\__ \
- |_| \_|\__,_| \_/ |_|\__, |\__,_|\__|_|\___/|_| |_| |____/ \__|\__, |_|\___||___/
-                      |___/                                     |___/                                                                                 
-*/
-.custom-tab-header{
-	border-color: #0D0F1B !important;
-	background-color: #0D0F1B !important;
+/* Placeholder text color for input boxes */
+::-webkit-input-placeholder {
+   color: #FFFFFF !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #FFFFFF !important;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #FFFFFF !important;  
+}
+
+:-ms-input-placeholder {  
+   color: #FFFFFF !important;  
 }
 
 /*
@@ -55,6 +59,31 @@
     display: block;
 }
 
+/* Background & Border Colors */
+.background-burgandy{
+  background-color: #8C4646 !important;
+}
+
+.background-flame{
+  background-color: #D96459 !important;
+}
+.background-grass{
+  background-color: #61B594 !important;
+}
+
+.border-burgandy{
+  border-color: #8C4646 !important;
+}
+
+.border-flame{
+  border-color: #D96459 !important;
+}
+
+.border-grass{
+  border-color: #61B594 !important;
+}
+
+
 /*
    ___                               _ _   _               ___            _        ____  _         _           
   / _ \__   _____ _ ____      ___ __(_) |_| |_ ___ _ __   |_ _|___  _ __ (_) ___  / ___|| |_ _   _| | ___  ___ 
@@ -65,21 +94,16 @@
 */
 
 ion-content{
-  background-color: #2A2B36 !important;
+  background-color: #D96459 !important;
 }
 
-.side-menu-gradient{
-  background: linear-gradient(to bottom left, #0D0F1B, #2A2B36) !important;
+.bar{
+  background-image: none !important;
 }
 
 .card, .list-inset{
   border-radius: 0px !important;
   background-color: rgba(0,0,0,0) !important;
-}
-
-/* Bus image in the side menu */
-.profile-image img{
-  border: none !important;
 }
 
 /* Fixes strange bug | slide-box's dots would flicker when scrolling */
@@ -90,34 +114,6 @@ transform: translateZ(0) !important;
 
 .tabs{
   color: #FFFFFF !important;
-  background-color: #0D0F1B !important;
+  background-color: #8C4646 !important;
   background-size: 100% 0px !important;
 }
-
-/*-------------------------------------------------------------------------------------------------*/
-.platform-ios .manual-ios-statusbar-padding{
-        padding-top:20px;
-      }
-      .manual-remove-top-padding{
-        padding-top:0px; 
-      }
-      .manual-remove-top-padding .scroll{
-        padding-top:0px !important;
-      }
-      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
-        margin-left:-10px;
-        margin-right:-10px;
-      }
-      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
-        border-radius:0px;
-        border-left:0px;
-        border-right: 0px;
-      }
-      .show-list-numbers-and-dots ul{
-        list-style-type: disc;
-        padding-left:40px;
-      }
-      .show-list-numbers-and-dots ol{
-        list-style-type: decimal;
-        padding-left:40px;
-      }

@@ -1,40 +1,42 @@
 {
-    "buses":
-    [
-        {
-            "company":"Matthews Coaches",
-            "routes":
-            [
-                {
-                    "busId": 1,
-                    "capacity": 40,
-                    "seats": 0
-                },
-                
-                {
-                    "busId": 2,
-                    "capacity": 40,
-                    "seats": 0
-                }
-            ]
-        },
-        
-        {
-            "company":"Dublin Bus",
-            "routes":
-            [
-                {
-                    "busId": 1,
-                    "capacity": 40,
-                    "seats": 0
-                },
-                
-                {
-                    "busId": 2,
-                    "capacity": 40,
-                    "seats": 0
-                }
-            ]
-        }
-    ]
+    "Matthews Coaches":
+    {
+        "routes":
+        [
+            {
+                "route":"Dundalk Direct",
+                "busNum": 1,
+                "capacity": 40,
+                "seats": 0
+            },
+            
+            {
+                "route":"Dundalk via Drogheda",
+                "busNum": 2,
+                "capacity": 40,
+                "seats": 0
+            },
+            
+            {
+                "route":"Bettystown",
+                "busNum": 3,
+                "capacity": 40,
+                "seats": 0
+            },
+            
+            {
+                "route":"IFSC",
+                "busNum": 4,
+                "capacity": 40,
+                "seats": 0
+            },
+            
+            {
+                "route":"UCD",
+                "busNum": 5,
+                "capacity": 40,
+                "seats": 0
+            }
+        ]
+    }
 }

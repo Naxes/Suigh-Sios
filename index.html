@@ -21,66 +21,24 @@
     <script src="js/services.js"></script>
 		<script src="js/routes.js"></script>
     <script src="js/directives.js"></script>
-  </head>
+	</head>
   <body ng-app="starter" animation="slide-left-right-ios7">
-  
-	<ion-side-menus enable-menu-with-back-views="false">
-	  <!-- Original -->
-	  <ion-side-menu-content>
-		<!-- Original bar -->
-		<ion-nav-bar class="bar-assertive custom-tab-header" align-title="center">
-		  <ion-nav-back-button></ion-nav-back-button>
-		  <ion-nav-title>
-		  	<!-- Logo Here -->
-		  </ion-nav-title>
-		  <!-- Nav button -->
-		  <ion-nav-buttons side="right">
-			<button class="button button-icon button-clear ion-navicon" menu-toggle="right"></button>
-		  </ion-nav-buttons>
-		</ion-nav-bar>
-		<!-- Original content -->
 		<!-- Do NOT remove -->
 		<ion-nav-view></ion-nav-view>
-	  </ion-side-menu-content>
-	  
-	  <!-- Side menu -->
-	  <ion-side-menu side="right" id="side-menu">
-		<!-- Content -->
-		<ion-content padding="false" style="top:0px !important;" class="side-menu-right side-menu-gradient">
-		  <div class="spacer" style="width: 268px; height: 36px;"></div>
-		  <div class="profile-image">
-			<img src="img/5iX6nVB8QhmhdOrj9sYD_busIcon.png" width="50%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
-		  </div>
-		  <h2 id="menu-heading1" style="color:#FFFFFF;font-weight:300;text-align:center;">Dear User</h2>
-		  <div class="spacer" style="width: 268px; height: 19px;"></div>
-		  <ion-list id="menu-list1">
-			<ion-item class="item-icon-right  side-menu-item" id="menu-list-item1" ui-sref="tab.stopNumber" menu-close="">
-				<i class="icon ion-android-pin"></i>Stop number</ion-item>
-			<ion-item class="item-icon-right  side-menu-item" id="menu-list-item2" ui-sref="tab.seats" menu-close="">
-			  <i class="icon ion-android-bus"></i>Seats</ion-item>
-			<ion-item class="item-icon-right  side-menu-item" id="menu-list-item3" ui-sref="tab.route" menu-close="">
-			  <i class="icon ion-android-map"></i>Route map</ion-item>
-			<ion-item class="item-icon-right  side-menu-item" id="menu-list-item4" ui-sref="tab.contact" menu-close="">
-			  <i class="icon ion-ios-chatboxes-outline"></i>Contact us</ion-item>
-		  </ion-list>
-		</ion-content>
-	  </ion-side-menu>
-	</ion-side-menus>
-	
-	<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyBQ5aBJNPXY1VHI7p5a9T15Ksy4T54LDko",
-	    authDomain: "testapp-c77c8.firebaseapp.com",
-	    databaseURL: "https://testapp-c77c8.firebaseio.com",
-	    storageBucket: "testapp-c77c8.appspot.com",
-	    messagingSenderId: "945447404926"
-	  };
-	  firebase.initializeApp(config);
-	  
-		// Get a reference to the database service
-	  var database = firebase.database();
-	</script>
+		<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyBQ5aBJNPXY1VHI7p5a9T15Ksy4T54LDko",
+		    authDomain: "testapp-c77c8.firebaseapp.com",
+		    databaseURL: "https://testapp-c77c8.firebaseio.com",
+		    storageBucket: "testapp-c77c8.appspot.com",
+		    messagingSenderId: "945447404926"
+		  };
+		  firebase.initializeApp(config);
+		  
+			// Get a reference to the database service
+		  var database = firebase.database();
+		</script>
   </body>
 </html>

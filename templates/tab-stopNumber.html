@@ -1,5 +1,29 @@
 <ion-view>
+  <ion-header-bar class="item-input-inset background-burgandy border-burgandy">
+      <label class="item-input-wrapper background-flame">
+        <i class="icon ion-ios-search placeholder-icon font-white"></i>
+        <input id="searchBus" type="search" placeholder="Search" ng-model="searchBus">
+      </label>
+      <button class="button button-clear font-white" ng-click="searchBus=''">
+        Cancel
+      </button>
+    </ion-header-bar>
   <ion-content>
-  	
+    <ion-list>
+      <div class="item item-divider text-center">Matthews Coaches</div> <!-- Hard Coded just to test -->
+      <ion-item ng-repeat="buses in matthewsData | filter:searchBus | orderBy:'route'">
+        <div class="row">
+          <div class="col" style="float: left; width: 33%;">
+            {{buses.route}}
+          </div>
+          
+          <div class="col" style="width: 33%;"></div>
+          
+          <div class="col" style="float: right; width: 33%">
+            {{buses.seats}}/{{buses.capacity}}
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

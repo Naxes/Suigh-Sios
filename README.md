@@ -46,9 +46,9 @@ change I'm making however is that it will specifically be used to search for bus
 that most of you are focusing exclusively on Dublin Bus, because you are all from Dublin. When I concepted this idea Dublin Bus was not even in the scope 
 of my plan.~~
 
-I believe streamlining this feature to make it the number buses go by as opposed to what stops they frequent is universally something all of the companies 
+~~I believe streamlining this feature to make it the number buses go by as opposed to what stops they frequent is universally something all of the companies 
 have in common. All of their buses have an ID or number the use to identify themselves by the route they take. Not all buses have the stop infrastructure that 
-Dublin Bus has.
+Dublin Bus has.~~
 
 **Tab 2**  
 This tab is the seat capacity tab. Right now it exclusively shows and updates the capacity of the first bus in our database. Ideally I want it so that you

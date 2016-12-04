@@ -40,7 +40,7 @@ Take for instance '$scope.something', it is AngularJS and is what allows us to c
 I want to rework the features we've chosen initially to focus more on the unique selling point of our app, which is the storage and retrieval of seat information 
 in realtime. I wish to rework the features as follows:
 
-**Tab 1**  
+~~**Tab 1**~~ 
 This tab is currently known as the 'stopNumber' tab. This is a feature I have chosen to keep mostly intact as I believe it's possible to accomplish. The 
 change I'm making however is that it will specifically be used to search for buses by their number and NOT the stops they go to. The reason this is, is 
 that most of you are focusing exclusively on Dublin Bus, because you are all from Dublin. When I concepted this idea Dublin Bus was not even in the scope 

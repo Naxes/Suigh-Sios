@@ -1,38 +1,55 @@
 angular.module('starter.controllers', [])
 
-// Controller for tab-stopNumber
-.controller('StopNumberCtrl', function($scope, $stateParams){
-  $scope.matthewsData;
-  
-  var matthewsRef = firebase.database().ref('Matthews Coaches/routes/');
-  matthewsRef.on("value", function(snapshot){
-    console.log(snapshot.val());
-    $scope.matthewsData = snapshot.val();
-    $scope.$evalAsync();
+// Controller for tab-busList
+.controller('BusCtrl', function($scope, $stateParams, $ionicModal){
+  // Brings up Seat Availability modal
+  $ionicModal.fromTemplateUrl('templates/seats.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
   });
-})
-
-// Controller for tab-seats
-.controller('SeatsCtrl', function($scope, $state) {
-  // Global variables for seat count and static data to equal itself when pushing to the database
-  $scope.busNum;
+  
+  // Variables tied to retrieved data for display in the views
+  $scope.matthewsData; // The array of object (buses) for Matthews Coaches
+  $scope.route;
   $scope.count;
   $scope.capacity;
   
-  // Reference first entry in Firebase Database & display data (Hard coded test)
-  var seatRef = firebase.database().ref('Matthews Coaches/routes/0/seats');
-  seatRef.on("value", function(snapshot) {
-    console.log(snapshot.val());
-    $scope.count = snapshot.val();
+  // Change this variable to switch between the buses in the database array
+  $scope.i = 0;
+  
+  // Firebase reference to the array of objects (buses)
+  var matthewsRef = firebase.database().ref('Matthews Coaches/routes/');
+  matthewsRef.on("value", function(snapshot, index){
+    // Assigns matthewsData as the array of objects (buses)
+    $scope.matthewsData = snapshot.val();
     $scope.$evalAsync();
   });
   
-  var capacityRef = firebase.database().ref('Matthews Coaches/routes/0/capacity/');
+  // Firebase reference to the bus capacity value from each array object (bus)
+  var capacityRef = firebase.database().ref('Matthews Coaches/routes/'+$scope.i+"/capacity");
   capacityRef.on("value", function(snapshot) {
-    console.log(snapshot.val());
     $scope.capacity = snapshot.val();
-    $scope.$evalAsync();
   });
+  
+  // Change seat data displayed based on bus list selection
+  $scope.pos = function(busNum){
+    $scope.i = busNum - 1;
+    console.log($scope.i);
+     setInterval(function(){
+      var seatUpdateRef = firebase.database().ref('Matthews Coaches/routes/'+$scope.i+"/seats");
+      seatUpdateRef.on("value", function(snapshot) {
+        $scope.count = snapshot.val();
+        $scope.$evalAsync();
+      })  
+    }, 4)
+      
+    var busUpdateRef = firebase.database().ref('Matthews Coaches/routes/'+$scope.i+"/route");
+    busUpdateRef.on("value", function(snapshot) {
+      $scope.route = snapshot.val();
+    })
+  }
   
   // Increment seat count & update database
   $scope.plus = function(seats){
@@ -42,7 +59,7 @@ angular.module('starter.controllers', [])
       console.log();
     }
     
-    firebase.database().ref('Matthews Coaches/routes/0/').update({
+    firebase.database().ref('Matthews Coaches/routes/'+$scope.i+"/").update({
       seats: $scope.count
     });
   }
@@ -50,12 +67,12 @@ angular.module('starter.controllers', [])
   // Subtract seat count & update database
   $scope.minus = function(seats){
     if($scope.count>0){
-      $scope.count--; 
+      $scope.count--;
     }else{
       console.log();
     }
     
-     firebase.database().ref('Matthews Coaches/routes/0/').update({
+    firebase.database().ref('Matthews Coaches/routes/'+$scope.i+"/").update({
       seats: $scope.count
     });
   }
@@ -64,7 +81,7 @@ angular.module('starter.controllers', [])
   $scope.reset = function(seats){
     $scope.count = 0;
     
-     firebase.database().ref('Matthews Coaches/routes/0/').update({
+    firebase.database().ref('Matthews Coaches/routes/'+$scope.i+"/").update({
       seats: $scope.count
     });
   }

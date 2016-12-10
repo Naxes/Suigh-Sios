@@ -2,16 +2,17 @@
   <ion-header-bar class="item-input-inset background-burgandy border-burgandy">
       <label class="item-input-wrapper background-flame">
         <i class="icon ion-ios-search placeholder-icon font-white"></i>
-        <input id="searchBus" type="search" placeholder="Search" ng-model="searchBus">
+        <input id="searchBus" type="search" placeholder="Search" ng-model="searchBus.route">
       </label>
       <button class="button button-clear font-white" ng-click="searchBus=''">
         Cancel
       </button>
-    </ion-header-bar>
+  </ion-header-bar>
+    
   <ion-content>
     <ion-list>
-      <div class="item item-divider text-center">Matthews Coaches</div> <!-- Hard Coded just to test -->
-      <ion-item ng-repeat="buses in matthewsData | filter:searchBus | orderBy:'route'">
+      <div class="item item-divider text-center">Matthews Coaches</div>
+      <ion-item ng-repeat="buses in matthewsData | filter:searchBus" ng-click="modal.show(); pos(buses.busNum);">
         <div class="row">
           <div class="col" style="float: left; width: 33%;">
             {{buses.route}}

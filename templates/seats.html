@@ -1,13 +1,14 @@
-<ion-view>
-  <ion-header-bar class="item-input-inset background-burgandy border-burgandy">
-      <h3 class="center font-white"></h3>
-    </ion-header-bar>
+<div class="modal">
+ <ion-header-bar class="item-input-inset background-burgandy border-burgandy">
+    <button class="button button-clear font-white" ng-click="modal.hide()">Back</button>
+  </ion-header-bar>
   <ion-content>
     <!-- Driver counter with controls -->
+    <h1 class="text-center font-white">{{route}}</h1>
     <!-- this inline margin for the card is temporary -->
     <div class="card" style="margin: 10px 10px;">
       <div class="item item-text-wrap text-center font-groB background-grass border-grass font-white">
-        {{count}}/{{capacity}}
+        <span>{{count}}/{{capacity}}</span>
         <div class="row">
           <div class="col">
             <!-- Button to decrease seat count -->
@@ -24,10 +25,9 @@
         </div>
         <!-- Button to reset seat count -->
         <button class="button button-block ion-icon ion-loop button-large" ng-click="reset()"></button>
-      </div>
     </div>
   </ion-content>
-</ion-view>
+</div>
 
 
 

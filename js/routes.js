@@ -11,23 +11,22 @@ angular.module('starter.routes', [])
   })
 
   // Each tab has its own nav history stack:
-
-  .state('tab.stopNumber', {
-    url: '/stopNumber',
+  .state('tab.busList', {
+    url: '/busList',
     views: {
-      'tab-stopNumber': {
-        templateUrl: 'templates/tab-stopNumber.html',
-        controller: 'StopNumberCtrl'
+      'tab-busList': {
+        templateUrl: 'templates/tab-busList.html',
+        controller: 'BusCtrl'
       }
     }
   })
   
-  .state('tab.seats', {
+  .state('seats', {
     url: '/seats',
     views: {
       'tab-seats': {
-        templateUrl: 'templates/tab-seats.html',
-        controller: 'SeatsCtrl'
+        templateUrl: 'templates/seats.html',
+        controller: 'BusCtrl'
       }
     }
   })
@@ -53,5 +52,5 @@ angular.module('starter.routes', [])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/stopNumber');
+  $urlRouterProvider.otherwise('/tab/busList');
 });

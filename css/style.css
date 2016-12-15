@@ -7,40 +7,31 @@
                                   |___/             
 */
 .justify-text{
-  text-align: justify;
+    text-align: justify;
 }
 
 .font-klein{
-  font-size: 15px;
+    font-size: 15px !important;
 }
 
 .font-mittel{
-  font-size: 20px;
+    font-size: 20px !important;
 }
 
 .font-groB{
-  font-size: 25px;
+    font-size: 25px !important;
 }
 
 .font-white{
-  color: #FFFFFF !important;
+    color: #FFFFFF !important;
 }
 
-/* Placeholder text color for input boxes */
-::-webkit-input-placeholder {
-   color: #FFFFFF !important;
+.font-black{
+    color: #010712 !important;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-   color: #FFFFFF !important;  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #FFFFFF !important;  
-}
-
-:-ms-input-placeholder {  
-   color: #FFFFFF !important;  
+.font-black-light{
+    color: #24262D !important;
 }
 
 /*
@@ -52,6 +43,13 @@
                                                  |___/             
 */
 
+/* Night Mode */
+.night-mode{
+    background-color: #24262D !important;
+    border-color: #010712 !important;
+    color: #FFFFFF;
+}
+
 /* Center divs (etc.) with this class */
 .center {
     margin-left: auto;
@@ -60,27 +58,37 @@
 }
 
 /* Background & Border Colors */
-.background-burgandy{
-  background-color: #8C4646 !important;
+.background-black{
+    background-color: #010712 !important;
 }
 
-.background-flame{
-  background-color: #D96459 !important;
+.background-black-light{
+    background-color: #24262D !important;
 }
-.background-grass{
-  background-color: #61B594 !important;
-}
-
-.border-burgandy{
-  border-color: #8C4646 !important;
+.background-steel{
+    background-color: #13171F !important;
 }
 
-.border-flame{
-  border-color: #D96459 !important;
+.border-black{
+    border-color: #010712 !important;
 }
 
-.border-grass{
-  border-color: #61B594 !important;
+.border-black-light{
+    border-color: #24262D !important;
+}
+
+.border-steel{
+    border-color: #13171F !important;
+}
+
+/* Buttons */
+.busBtn.button.activated{
+    color: #FFFFFF;
+    background-color: #961227 !important;
+}
+
+.setStatus{
+    background-color: red;   
 }
 
 
@@ -92,28 +100,29 @@
   \___/  \_/ \___|_|    \_/\_/ |_|  |_|\__|\__\___|_| |_| |___\___/|_| |_|_|\___| |____/ \__|\__, |_|\___||___/
                                                                                              |___/             
 */
-
-ion-content{
-  background-color: #D96459 !important;
-}
-
 .bar{
-  background-image: none !important;
+    background-image: none !important;
 }
 
 .card, .list-inset{
-  border-radius: 0px !important;
-  background-color: rgba(0,0,0,0) !important;
+    border-radius: 0px !important;
+    background-color: rgba(0,0,0,0) !important;
 }
 
 /* Fixes strange bug | slide-box's dots would flicker when scrolling */
 .slider-pager {
--webkit-transform: translateZ(0) !important;
-transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
 }
 
+/* Tab links on the bottom (IOS) or top (Android) of the app */
 .tabs{
-  color: #FFFFFF !important;
-  background-color: #8C4646 !important;
-  background-size: 100% 0px !important;
+    color: #FFFFFF !important;
+    background-color: #13171F !important;
+    background-size: 100% 0px !important;
+}
+
+/* Tab links selected state */
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+    background-color: #961227 !important;
 }

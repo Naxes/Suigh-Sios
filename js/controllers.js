@@ -1,7 +1,7 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic'])
 
 // Controller for tab-busList
-.controller('BusCtrl', function($scope, $stateParams, $ionicModal){
+.controller('BusCtrl', function($scope, $stateParams, $ionicModal, $rootScope, $ionicPopup){
   // Brings up Seat Availability modal
   $ionicModal.fromTemplateUrl('templates/seats.html', {
     scope: $scope,
@@ -11,10 +11,13 @@ angular.module('starter.controllers', [])
   });
   
   // Variables tied to retrieved data for display in the views
-  $scope.matthewsData; // The array of object (buses) for Matthews Coaches
+  $scope.matthewsData;
   $scope.route;
   $scope.count;
   $scope.capacity;
+  $scope.status;
+  $scope.interval;
+  $scope.statusColor;
   
   // Change this variable to switch between the buses in the database array
   $scope.i = 0;
@@ -33,11 +36,18 @@ angular.module('starter.controllers', [])
     $scope.capacity = snapshot.val();
   });
   
+  // Firebase reference to the status color value from each array object (bus)
+  var statusColorRef = firebase.database().ref('Matthews Coaches/routes/'+$scope.i+"/statusColor");
+  statusColorRef.on("value", function(snapshot) {
+    $scope.statusColor = snapshot.val();
+  });
+  
   // Change seat data displayed based on bus list selection
   $scope.pos = function(busNum){
     $scope.i = busNum - 1;
     console.log($scope.i);
-     setInterval(function(){
+    
+     $scope.interval = setInterval(function(){
       var seatUpdateRef = firebase.database().ref('Matthews Coaches/routes/'+$scope.i+"/seats");
       seatUpdateRef.on("value", function(snapshot) {
         $scope.count = snapshot.val();
@@ -49,6 +59,10 @@ angular.module('starter.controllers', [])
     busUpdateRef.on("value", function(snapshot) {
       $scope.route = snapshot.val();
     })
+  }
+  
+  $scope.clearInterval = function(){
+    clearInterval($scope.interval);
   }
   
   // Increment seat count & update database
@@ -77,13 +91,59 @@ angular.module('starter.controllers', [])
     });
   }
   
-  // Reset seat count & update database
+  // Reset seat count & update database with confirmation popup
   $scope.reset = function(seats){
-    $scope.count = 0;
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Reset Seats',
+      template: 'Are you sure you want to reset the seats to zero?'
+    });
+    confirmPopup.then(function(res){
+      if (res) {
+        $scope.count = 0;
+        
+        firebase.database().ref('Matthews Coaches/routes/'+$scope.i+"/").update({
+          seats: $scope.count
+        });  
+      } else {
+        console.log("Nevermind!")
+      }
+    })
+  }
+  
+  // Set the buses status with alert popup
+  $scope.option1 = function(status, statusColor){
+    $ionicPopup.alert({
+      title: 'Status Updated',
+      template: 'Status changed to "On Time".'
+    })
+    $scope.status = "On Time";
+    $scope.statusColor = "#31965D";
     
     firebase.database().ref('Matthews Coaches/routes/'+$scope.i+"/").update({
-      seats: $scope.count
+      status: $scope.status,
+      statusColor: $scope.statusColor
     });
+  }
+  
+  $scope.option2 = function(status, statusColor){
+    $ionicPopup.alert({
+      title: 'Status Updated',
+      template: 'Status changed to "Late".'
+    })
+    $scope.status = "Late";
+    $scope.statusColor = "#961227";
+    
+    firebase.database().ref('Matthews Coaches/routes/'+$scope.i+"/").update({
+      status: $scope.status,
+      statusColor: $scope.statusColor
+    });
+  }
+  
+  // Switch to Night Mode! :) 
+  $rootScope.isActive = true;
+  $scope.activeButton = function() {
+    $rootScope.isActive = !$rootScope.isActive;
+    $scope.$evalAsync();
   }
 })
 
@@ -93,6 +153,6 @@ angular.module('starter.controllers', [])
 })
 
 // Controller for tab-contact
-.controller('ContactCtrl', function($scope) {
+.controller('ContactCtrl', function($scope, $rootScope) {
 
 })

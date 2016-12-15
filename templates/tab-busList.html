@@ -1,26 +1,43 @@
 <ion-view>
-  <ion-header-bar class="item-input-inset background-burgandy border-burgandy">
-      <label class="item-input-wrapper background-flame">
-        <i class="icon ion-ios-search placeholder-icon font-white"></i>
+  <ion-header-bar class="background-black border-black font-white">
+    <ion-title>Matthews Coaches</ion-title>
+  </ion-header-bar>
+  
+    <ion-header-bar class="item-input-inset bar-subheader" ng-class="{'background-black' : isActive}">
+      <label class="item-input-wrapper" ng-class="{'background-black-light' : isActive}">
+        <i class="icon ion-ios-search placeholder-icon"></i>
         <input id="searchBus" type="search" placeholder="Search" ng-model="searchBus.route">
       </label>
-      <button class="button button-clear font-white" ng-click="searchBus=''">
-        Cancel
-      </button>
+      <button class="button button-clear" ng-class="{'font-white' : isActive}"ng-click="searchBus=''">Cancel</button>
   </ion-header-bar>
-    
-  <ion-content>
+  <ion-content class="has-subheader" ng-class="{'background-black' : isActive}">
     <ion-list>
-      <div class="item item-divider text-center">Matthews Coaches</div>
-      <ion-item ng-repeat="buses in matthewsData | filter:searchBus" ng-click="modal.show(); pos(buses.busNum);">
+      <!-- List Header -->
+      <div class="item item-divider" ng-class="{'night-mode' : isActive}">
         <div class="row">
-          <div class="col" style="float: left; width: 33%;">
+          <div class="col" style="width: 25%;">Route</div>
+          <div class="col" style="width: 25%;"></div>
+          <div class="col"></div>
+          <div class="col text-right" style="width: 25%;">Status</div>
+          <div class="col text-right" style="width: 25%">Seats</div>
+        </div>
+      </div>
+      <!-- Repeated list items from array of buses retrieved from Firebase -->
+      <ion-item class="font-klein " ng-repeat="buses in matthewsData | filter:searchBus | orderBy:'route'" ng-class="{'night-mode' : isActive}" ng-click="modal.show(); pos(buses.busNum);">
+        <div class="row">
+          <div class="col" style="width: 25%;">
             {{buses.route}}
           </div>
           
-          <div class="col" style="width: 33%;"></div>
+          <div class="col"></div>
           
-          <div class="col" style="float: right; width: 33%">
+          <div class="col" style="width: 25%;"></div>
+          
+          <div class="col" style="width: 25%;">
+            <div style="width: 20px; height: 20px; margin: 0 auto; background-color:{{buses.statusColor}}"></div>
+          </div>
+          
+          <div class="col text-right" style="width: 25%;">
             {{buses.seats}}/{{buses.capacity}}
           </div>
         </div>

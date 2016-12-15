@@ -1,42 +1,54 @@
 {
-    "Matthews Coaches":
-    {
-        "routes":
-        [
-            {
-                "route":"Dundalk Direct",
-                "busNum": 1,
-                "capacity": 40,
-                "seats": 0
-            },
-            
-            {
-                "route":"Dundalk via Drogheda",
-                "busNum": 2,
-                "capacity": 40,
-                "seats": 0
-            },
-            
-            {
-                "route":"Bettystown",
-                "busNum": 3,
-                "capacity": 40,
-                "seats": 0
-            },
-            
-            {
-                "route":"IFSC",
-                "busNum": 4,
-                "capacity": 40,
-                "seats": 0
-            },
-            
-            {
-                "route":"UCD",
-                "busNum": 5,
-                "capacity": 40,
-                "seats": 0
-            }
-        ]
-    }
+  "Matthews Coaches" : {
+    "routes" : [ {
+      "busNum" : 1,
+      "capacity" : 40,
+      "route" : "Dundalk Direct",
+      "status": "On Time",
+      "statusColor": "green",
+      "seats" : 20
+    }, {
+      "busNum" : 2,
+      "capacity" : 40,
+      "route" : "Dundalk via Drogheda",
+      "status": "On Time",
+      "statusColor": "green",
+      "seats" : 10
+    }, {
+      "busNum" : 3,
+      "capacity" : 40,
+      "route" : "Bettystown",
+      "status": "On Time",
+      "statusColor": "green",
+      "seats" : 11
+    }, {
+      "busNum" : 4,
+      "capacity" : 40,
+      "route" : "IFSC from Dundalk",
+      "status": "On Time",
+      "statusColor": "green",
+      "seats" : 20
+    }, {
+      "busNum" : 5,
+      "capacity" : 40,
+      "route" : "UCD from Dundalk",
+      "status": "On Time",
+      "statusColor": "green",
+      "seats" : 15
+    }, {
+      "busNum" : 6,
+      "capacity" : 40,
+      "route" : "UCD from Bettystown",
+      "status": "On Time",
+      "statusColor": "green",
+      "seats" : 15
+    }, {
+      "busNum" : 7,
+      "capacity" : 40,
+      "route" : "IFSC from Bettystown",
+      "status": "On Time",
+      "statusColor": "green",
+      "seats" : 15
+    } ]
+  }
 }

@@ -7,7 +7,8 @@ angular.module('starter.routes', [])
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/tabs.html',
+    controller: 'BusCtrl'
   })
 
   // Each tab has its own nav history stack:
@@ -16,16 +17,6 @@ angular.module('starter.routes', [])
     views: {
       'tab-busList': {
         templateUrl: 'templates/tab-busList.html',
-        controller: 'BusCtrl'
-      }
-    }
-  })
-  
-  .state('seats', {
-    url: '/seats',
-    views: {
-      'tab-seats': {
-        templateUrl: 'templates/seats.html',
         controller: 'BusCtrl'
       }
     }
@@ -46,7 +37,7 @@ angular.module('starter.routes', [])
     views: {
       'tab-contact': {
         templateUrl: 'templates/tab-contact.html',
-        controller: 'ContactCtrl'
+        controller: 'BusCtrl'
       }
     }
   });

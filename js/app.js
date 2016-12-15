@@ -20,12 +20,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.routes', 'st
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    
+    if(window.Connection) {
+      if(navigator.connection.type == Connection.NONE) {
+          $ionicPopup.confirm({
+              title: "Internet Disconnected",
+              content: "The internet is disconnected on your device."
+          })
+          .then(function(result) {
+              if(!result) {
+                  ionic.Platform.exitApp();
+              }
+          });
+      }
+    }
   });
 })
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
   
-
+  // Set tabs to the bottom position for both IOS & Android
+  $ionicConfigProvider.tabs.position('bottom');
   $sceDelegateProvider.resourceUrlWhitelist([ 'self','*://www.youtube.com/**', '*://player.vimeo.com/video/**']);
 
 })

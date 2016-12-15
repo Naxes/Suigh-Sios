@@ -1,6 +1,8 @@
 <ion-view>
-  <ion-nav-bar class="bar background-burgandy border-burgandy" align-title="center"></ion-nav-bar>
-  <ion-content>
-  	
+  <ion-header-bar class="background-black border-black font-white">
+    <ion-title>Settings</ion-title>
+  </ion-header-bar>
+  <ion-content ng-class="{'background-black' : isActive}">
+    <ion-toggle toggle-class="toggle-positive" ng-class="{'night-mode' : isActive}" ng-model="isActive" ng-change="activeButton();">Night Mode</ion-toggle>
   </ion-content>
 </ion-view>

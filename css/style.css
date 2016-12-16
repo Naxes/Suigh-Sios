@@ -91,6 +91,15 @@
     background-color: red;   
 }
 
+/* Map */
+map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.scroll {
+  height: 100%;
+}
 
 /*
    ___                               _ _   _               ___            _        ____  _         _           

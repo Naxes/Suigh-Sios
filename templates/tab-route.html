@@ -1,6 +1,9 @@
-<ion-view>
-  <ion-nav-bar class="bar background-black border-black" align-title="center"></ion-nav-bar>
-  <ion-content ng-class="{'background-black' : isActive}">
-    
+<ion-view onload="setMap();">
+  <ion-header-bar class="background-black border-black font-white">
+    <a ng-click="centerOnMe()" class="button button-icon icon ion-ios-location font-white"></a>
+    <ion-title>Map</ion-title>
+  </ion-header-bar>
+  <ion-content scroll="false" ng-class="{'background-black' : isActive}">
+    <map on-create="mapCreated(map)"></map>
   </ion-content>
 </ion-view>

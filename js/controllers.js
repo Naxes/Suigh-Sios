@@ -2,6 +2,7 @@ angular.module('starter.controllers', ['ionic'])
 
 // Controller for tab-busList
 .controller('BusCtrl', function($scope, $stateParams, $ionicModal, $rootScope, $ionicPopup){
+  
   // Brings up Seat Availability modal
   $ionicModal.fromTemplateUrl('templates/seats.html', {
     scope: $scope,
@@ -148,11 +149,38 @@ angular.module('starter.controllers', ['ionic'])
 })
 
 // Controller for tab-routes
-.controller('RouteCtrl', function($scope) {
+.controller('RouteCtrl', function($scope, $ionicLoading, $ionicPopup) {
+  // Trigger resize before entering the view - Solves issue of map messing up when opening busList's modal windows
+  $scope.$on('$ionicView.afterEnter', function() {
+    ionic.trigger('resize');
+  });
+  
+  // Google Maps API
+  $scope.mapCreated = function(map) {
+    $scope.map = map;
+  };
 
-})
+  $scope.centerOnMe = function () {
+    console.log("Centering");
+    if (!$scope.map) {
+      return;
+    }
 
-// Controller for tab-contact
-.controller('ContactCtrl', function($scope, $rootScope) {
+    $ionicLoading.show({
+      content: 'Getting current location...',
+      showBackdrop: false
+    });
 
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      console.log('Got pos', pos);
+      $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+      $ionicLoading.hide();
+    }, function (error) {
+      $ionicPopup.alert({
+        title: 'Unable to get location',
+        template: error.message
+      })
+      $ionicLoading.hide();
+    });
+  };
 })

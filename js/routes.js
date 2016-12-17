@@ -8,40 +8,40 @@ angular.module('starter.routes', [])
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html',
-    controller: 'BusCtrl'
+    controller: 'RouteCtrl'
   })
 
   // Each tab has its own nav history stack:
-  .state('tab.busList', {
-    url: '/busList',
+  .state('tab.routes', {
+    url: '/routes',
     views: {
-      'tab-busList': {
-        templateUrl: 'templates/tab-busList.html',
-        controller: 'BusCtrl'
+      'tab-routes': {
+        templateUrl: 'templates/tab-routes.html',
+        controller: 'RouteCtrl'
       }
     }
   })
 
-  .state('tab.route', {
-      url: '/route',
+  .state('tab.map', {
+      url: '/map',
       views: {
-        'tab-route': {
-          templateUrl: 'templates/tab-route.html',
-          controller: 'RouteCtrl'
+        'tab-map': {
+          templateUrl: 'templates/tab-map.html',
+          controller: 'MapCtrl'
         }
       }
     })
 
-  .state('tab.contact', {
-    url: '/contact',
+  .state('tab.settings', {
+    url: '/settings',
     views: {
-      'tab-contact': {
-        templateUrl: 'templates/tab-contact.html',
-        controller: 'BusCtrl'
+      'tab-settings': {
+        templateUrl: 'templates/tab-settings.html',
+        controller: 'RouteCtrl'
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/busList');
+  $urlRouterProvider.otherwise('/tab/routes');
 });

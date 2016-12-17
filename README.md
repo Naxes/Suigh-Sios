@@ -10,7 +10,7 @@ The app itself consistes of three views and one modal popup window that displays
 This tab holds the list of buses retrieved and displayed from an array of buses stored on a Firebase database. Clicking each navigates you to a buses respective control page with options to increment, negate, and reset seat counts as well as
 update the current status of the bus from 'On Time' to 'Late' represented by a colored icon.
 
-**Tab 2**  
+~~**Tab 2**~~ **(Completed)**  
 This tab is yet undecided. A route map would be interesting, but if it's just a Google Map with nothing on it, then I'd rather deprecate this tab.
 
 ~~**Tab 3**~~ **(Completed)**    

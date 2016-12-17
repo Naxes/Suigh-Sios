@@ -1,12 +1,12 @@
 <div class="modal">
  <ion-header-bar class="item-input-inset" ng-class="{'night-mode' : isActive}">
-    <button class="button button-clear" ng-click="modal.hide(); clearInterva();">Back</button>
+    <button class="button button-clear" ng-click="modal.hide(); clearInterval();">Back</button>
     <ion-title ng-class="{'font-white' : isActive}">{{route}}</ion-title>
   </ion-header-bar>
   <ion-content ng-class="{'background-black' : isActive}">
     <ul class="list">
       <!-- Driver counter with controls -->
-      <li class="item item-divider" ng-class="{'background-steel border-steel font-white' : isActive}">Capacity Controls</li>
+      <li class="item item-divider" ng-class="{'background-black border-black font-white' : isActive}">Capacity Controls</li>
       <li class="item item-text-wrap text-center font-groB" ng-class="{'night-mode border-steel' : isActive}">
         <span>{{count}}/{{capacity}}</span>
         <div class="row">
@@ -38,7 +38,7 @@
         </div>
       </li>
       
-      <li class="item item-divider" ng-class="{'background-steel border-steel font-white' : isActive}">Status Controls</li>
+      <li class="item item-divider" ng-class="{'background-black border-black font-white' : isActive}">Status Controls</li>
       <!-- Set buses status -->
       <li class="item item-text-wrap text-center font-groB" ng-class="{'night-mode border-steel' : isActive}">
         <div class="row">

@@ -1,7 +1,7 @@
 angular.module('starter.controllers', ['ionic'])
 
 // Controller for tab-busList
-.controller('BusCtrl', function($scope, $stateParams, $ionicModal, $rootScope, $ionicPopup){
+.controller('RouteCtrl', function($scope, $stateParams, $ionicModal, $rootScope, $ionicPopup){
   
   // Brings up Seat Availability modal
   $ionicModal.fromTemplateUrl('templates/seats.html', {
@@ -149,7 +149,7 @@ angular.module('starter.controllers', ['ionic'])
 })
 
 // Controller for tab-routes
-.controller('RouteCtrl', function($scope, $ionicLoading, $ionicPopup) {
+.controller('MapCtrl', function($scope, $ionicLoading, $ionicPopup) {
   // Trigger resize before entering the view - Solves issue of map messing up when opening busList's modal windows
   $scope.$on('$ionicView.afterEnter', function() {
     ionic.trigger('resize');

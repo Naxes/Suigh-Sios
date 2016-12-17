@@ -1,19 +1,19 @@
 <ion-view>
   <ion-header-bar class="background-black border-black font-white">
-    <ion-title>Matthews Coaches</ion-title>
+    <ion-title>Driver</ion-title>
   </ion-header-bar>
   
     <ion-header-bar class="item-input-inset bar-subheader" ng-class="{'background-black' : isActive}">
       <label class="item-input-wrapper" ng-class="{'background-black-light' : isActive}">
         <i class="icon ion-ios-search placeholder-icon"></i>
-        <input id="searchBus" type="search" placeholder="Search" ng-model="searchBus.route">
+        <input id="searchBus" type="search" placeholder="Search" ng-class="{'font-white' : isActive}" ng-model="searchBus.route">
       </label>
       <button class="button button-clear" ng-class="{'font-white' : isActive}"ng-click="searchBus=''">Cancel</button>
   </ion-header-bar>
   <ion-content class="has-subheader" ng-class="{'background-black' : isActive}">
     <ion-list>
       <!-- List Header -->
-      <div class="item item-divider" ng-class="{'night-mode' : isActive}">
+      <div class="item item-divider" ng-class="{'background-black font-white border-black' : isActive}">
         <div class="row">
           <div class="col" style="width: 25%;">Route</div>
           <div class="col" style="width: 25%;"></div>
